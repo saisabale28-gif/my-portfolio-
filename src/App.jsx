@@ -1,32 +1,27 @@
-const projectList = [
-  {
-    title: "Project One",
-    description: "A web application built using React that solves a real-world problem."
-  },
-  {
-    title: "Project Two",
-    description: "A full-stack application with authentication and database integration."
-  },
-  {
-    title: "Project Three",
-    description: "An interactive UI-focused project showcasing clean component architecture."
-  }
-]
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
-function Projects() {
+function App() {
   return (
-    <section>
-      <h2>Projects</h2>
+    <div className="relative min-h-screen text-white overflow-hidden bg-[#0f0f0f] pt-24">
 
-      {projectList.map((project, index) => (
-        <div key={index}>
-          <h3>{project.title}</h3>
-          <p>{project.description}</p>
-        </div>
-      ))}
+      {/* Premium Glow Background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-[-200px] left-[-200px] w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-[-200px] right-[-200px] w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-3xl animate-pulse"></div>
+      </div>
 
-    </section>
-  )
+      <Navbar />
+      <Hero />
+      <About />
+      <Projects />
+      <Contact />
+
+    </div>
+  );
 }
 
-export default Projects
+export default App;

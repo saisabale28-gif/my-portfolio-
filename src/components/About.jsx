@@ -1,25 +1,41 @@
 function About() {
   return (
-    <section>
-      <h2>About Me</h2>
+<section id="about" className="py-28 px-8">
 
-      <p>
-        I am a Computer Engineering student with a strong interest in building
-        modern, scalable web applications.
-      </p>
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
-      <p>
-        I specialize in React and enjoy turning complex problems into simple,
-        user-friendly solutions.
-      </p>
+        <div>
+          <h2 className="text-4xl font-bold mb-6">
+            About Me
+          </h2>
 
-      <p>
-        Currently, I am focused on improving my development skills and building
-        projects that create real-world impact.
-      </p>
+          <p className="text-gray-400 text-lg leading-relaxed mb-6">
+            I am a Computer Engineering student focused on building modern,
+            scalable web applications that solve real-world problems.
+          </p>
 
+          <p className="text-gray-400 text-lg leading-relaxed">
+            I prioritize mastering fundamentals, writing clean architecture,
+            and creating products that deliver real value.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-6">
+          {["React", "JavaScript", "Tailwind", "Node.js", "MongoDB", "Git"].map(
+            (skill, index) => (
+              <div
+                key={index}
+                className="bg-zinc-900 border border-zinc-800 p-6 rounded-xl text-center hover:scale-105 transition"
+              >
+                {skill}
+              </div>
+            )
+          )}
+        </div>
+
+      </div>
     </section>
-  )
+  );
 }
 
-export default About
+export default About;
